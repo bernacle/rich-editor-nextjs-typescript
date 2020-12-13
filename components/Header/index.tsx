@@ -14,6 +14,4 @@ const Header: React.FunctionComponent = () => {
     )
 }
 
-export {
-    Header
-};
+export default Header;

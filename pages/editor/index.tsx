@@ -1,10 +1,10 @@
-import { Header } from '../../components/Header'
+import Header from '../../components/Header'
 import { Editor, EditorState, RichUtils } from 'draft-js'
 import 'draft-js/dist/Draft.css';
 import { useCallback, useState } from 'react';
 import { emptyContentState } from '../../utils/emptyContentState'
 
-import { Container, Content } from './styles'
+import { Container, Content } from '../../styles/Editor/styles';
 
 
 const Home = () => {
