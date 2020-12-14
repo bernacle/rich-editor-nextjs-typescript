@@ -10,6 +10,7 @@ const Header: React.FunctionComponent = () => {
                 <Link href="/">Home</Link>
                 <Link href="/editor">Editor</Link>
                 <Link href="/quill">Quill</Link>
+                <Link href="/tiny">Tiny</Link>
             </nav>
         </Container>
     )
