@@ -9,6 +9,7 @@ const Header: React.FunctionComponent = () => {
             <nav>
                 <Link href="/">Home</Link>
                 <Link href="/editor">Editor</Link>
+                <Link href="/quill">Quill</Link>
             </nav>
         </Container>
     )
