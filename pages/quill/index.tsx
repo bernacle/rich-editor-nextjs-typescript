@@ -1,18 +1,20 @@
 import Header from '../../components/Header'
-import ReactQuill from 'react-quill';
+const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
 import 'react-quill/dist/quill.snow.css';
 import '../../styles/Quill/styles'
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Container, Content } from '../../styles/Quill/styles';
 
 
 
 const QuillEditor = () => {
-    const [value, setValue] = useState('');
-    const Quill = ReactQuill.Quill;
-    var Font = Quill.import("formats/font");
-    Font.whitelist = ["Roboto", "Raleway", "Montserrat", "Lato", "Rubik"];
-    Quill.register(Font, true);
+
+    useEffect(() => {
+        const Quill = ReactQuill.Quill;
+        var Font = Quill.import("formats/font");
+        Font.whitelist = ["Roboto", "Raleway", "Montserrat", "Lato", "Rubik"];
+        Quill.register(Font, true);
+    }, [])
 
 
     const formats = [
@@ -36,7 +38,7 @@ const QuillEditor = () => {
 
     const modules = {
         toolbar: [
-            [{ header: "1" }, { header: "2" }, { font: Font.whitelist }],
+            [{ header: "1" }, { header: "2" }, { font: ["Roboto", "Raleway", "Montserrat", "Lato", "Rubik"] }],
             ["bold", "italic", "underline", "strike", "blockquote"],
             [{ color: [] }, { background: [] }],
             [{ align: [] }],
@@ -52,6 +54,7 @@ const QuillEditor = () => {
     };
 
 
+
     return (
         <Container>
             <Header></Header>
@@ -64,6 +67,9 @@ const QuillEditor = () => {
             </Content>
         </Container>
     )
+
+
+
 }
 
 
